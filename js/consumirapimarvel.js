@@ -141,6 +141,14 @@ function consumirAPIMarvelVer(tipo) {
 
 }
 
+function obtenerURLStories(resourceURL) {
+    var URLSegura = "https://" + resourceURL.substring(7, resourceURL.length); //no me sirve http, necesito https
+
+    var URLCompleta = URLSegura + '?ts=' + ts + "&apikey=" + apikey + "&hash=" + hash
+
+    return URLCompleta
+}
+
 function consumirAPIMarvelVerStories() {
     const paramURL = window.location.search;
     const parametrosURL = new URLSearchParams(paramURL);
@@ -233,13 +241,7 @@ function consumirAPIMarvelVerStories() {
 
 
 
-function obtenerURLStories(resourceURL) {
-    var URLSegura = "https://" + resourceURL.substring(7, resourceURL.length); //no me sirve http, necesito https
 
-    var URLCompleta = URLSegura + '?ts=' + ts + "&apikey=" + apikey + "&hash=" + hash
-
-    return URLCompleta
-}
 
 
 
